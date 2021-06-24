@@ -1,0 +1,18 @@
+from thinker import *
+from_thinker.ttk import *
+
+from time import strftime
+
+root = Tk()
+root.title("clock")
+
+def time():
+	string = strftime('%H:%M:%S %p')
+	lable.config(text=string)
+	lable.after(1000, time)
+
+lable = label(root,font=("DS-DIGI",80),background = "black", foreground = "cyan")
+lable.pack(anchor='center')
+time()
+
+mainloop()
